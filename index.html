@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="./styles.css" rel="stylesheet">
+    
+    <title>Sugar Your Face</title>
+</head>
+<body>
+    <script src='./scripts.js'></script>
+    
+
+    <div id="sidebar1" class="sidebar" aria-label="Main sidebar containing navigation links and some information" data-hidden="true">
+        <aside class="sidebar__content">
+            <button data-toggle-sidebar="sidebar1" id="closeToggler"> X</button>
+            <li>Menu</li>
+            <hr>
+            <li>Pricing</li>
+            <hr>
+            <li>Order</li>
+            <hr>
+            <li>About</li>
+        </aside>
+      </div>
+      <main data-sidebar-hidden="true">
+          <div class="menu-expander">
+              <button data-toggle-sidebar="sidebar1" id="pageToggler">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+              </button>
+          </div>
+
+        <section class="main-logo">
+            <div id="logoImage"></div>
+
+        </section>
+        <section>
+            <h1>Some of what we bake includes..</h1>
+            <div class="paragraph">
+                <li>
+                    Cakes
+                </li>
+                <li>
+                    Cupcakes
+                </li>
+                <li>
+                    Other Items
+                </li>
+                <a href="./menu.html"> Complete menu</a>
+              </div>
+              
+
+        </section>
+        <section class="color-placeholder">
+            xx
+        </section>
+        <section>
+
+        </section>
+        <section class="color-placeholder">
+            xx
+        </section>
+        <section>z</section>
+    </main>
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+     <script>
+         //Inline script for toggling sidebar
+            document.querySelectorAll('[data-toggle-sidebar]').forEach(toggle => {
+            toggle.addEventListener('click', e => {
+                const sidebarID = toggle.dataset.toggleSidebar;
+                const bodyEl = document.getElementsByTagName('main')[0];
+                
+                const sidebarElement = sidebarID ? document.getElementById(sidebarID) : undefined;
+                if (sidebarElement) {
+                    let sidebarState = sidebarElement.getAttribute('data-hidden');
+                    sidebarElement.setAttribute('data-hidden', sidebarState == 'true' ? false : true); 
+                    bodyEl.setAttribute('data-sidebar-hidden', sidebarState == 'true' ? false : true); 
+                    
+                }
+            });
+            });
+
+        </script>
+</body>
+</html>
