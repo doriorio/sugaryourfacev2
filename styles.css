@@ -1,5 +1,5 @@
 /* CSS RESET */
-
+/*  
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,7 +21,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
+/* HTML5 display-role reset for older browsers 
  article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -44,10 +44,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 } 
+
 /* END CSS RESET */
 
 body {
     min-height: 100vh;
+    font-family: 'Open Sans';
+    text-align: center;
+    scroll-behavior: smooth;
+
 }
 /* Sidebar positioning styles */
 body {
@@ -56,7 +61,7 @@ body {
   }
   /* SIDEBAR POSITION */
   .sidebar {
-    background-color: #FF1493;
+    background-color: black;
     color: white;
     height: 100vh;
     position: fixed;
@@ -105,8 +110,10 @@ main[data-sidebar-hidden="false"] {
   }
 
   button[data-toggle-sidebar="sidebar1"]{
-      border-radius: 5px;
-      padding: 5px;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      /* padding: 5px; */
       font-family: sans-serif;;
       color: fuchsia
   }
@@ -114,35 +121,43 @@ main[data-sidebar-hidden="false"] {
   
   
   /* Main content */
+body { 
+    background-color: rgba(255, 20, 147, 0.2);
+}
+
 
   main {
+
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
       /* align-items: stretch; */
+
       
     }
 
     #pageToggler > div  {
-        width: 35px;
+        width: 20px;
         height: 3px;
         background-color: #b8adad;
-        margin: 6px 0;
+        margin: 6px 6px;
 
     }
     
 
  .color-placeholder {
-      width: 50%;
-      flex-grow: 3;
-      background-color: lavenderblush;
-      margin-bottom: 10px;
+
+
+      background-color: #FF1493;
+
   }
 
   section {
+      width: 30%;
       padding: 10%;
   }
 
   h1 {
     font-weight: bold;
+    font-family: 'Kaushan Script', cursive;
   }
