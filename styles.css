@@ -87,6 +87,8 @@ body {
 
 .main-logo {
     width: 100%;
+
+    margin-bottom: 5px;
 }
 
 
@@ -146,8 +148,6 @@ body {
     
 
  .color-placeholder {
-
-
       background-color: #FF1493;
 
   }
