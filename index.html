@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Sugar Your Face</title>
+    <link rel="icon" type="image/png" href="assets/cupcake.ico"><!-- Major Browsers -->
+
 </head>
 <body>
     <script src='./scripts.js'></script>
@@ -22,21 +24,23 @@
             <button data-toggle-sidebar="sidebar1" id="closeToggler" style="display:block"> X</button>
             <div style="padding-top:20px"></div>
             <div style="padding-top:20px"></div>
-            <span style="padding:10px">Navigate ↓ </span>
-            <hr>
-            <ul>
-            <li>Menu</li>
-            <hr>
-            <li>Pricing</li>
-            <hr>
-            <li>Order</li>
-            <hr>
-            <li>About</li>
-        </ul>
+            <br>
+            <ul style="list-style-type:none;">
+                <div>Navigate</div>
+                <span>↓</span>
+                <br>
+                <li class="content-selector" data-type="menu-expand" data-toggle-sidebar="sidebar1"><u>Menu</u></li>
+                <br>
+                <li class="content-selector" data-type="pricing-expand" data-toggle-sidebar="sidebar1"><u>Pricing</u></li>
+                <br>
+                <li>Order</li>
+                <br>
+                <li>Contact</li>
+            </ul>
         </aside>
 
       </div>
-<!-- End boilerplate, include inline script below -->
+<!-- Endboilerplate, include inline script below -->
       <main data-sidebar-hidden="true">
           <div class="menu-expander">
               <button data-toggle-sidebar="sidebar1" id="pageToggler">
@@ -46,28 +50,62 @@
               </button>
           </div>
 
-        <section class="main-logo">
+        <header class="main-logo">
             <div id="logoImage"></div>
-            <div style="padding-top:5px">Info about the biz here</div>
-        </section>
-        <section>
-            <h1>Some of what we bake includes..</h1>
-            <div class="paragraph">
-                <li>
-                    Cakes
-                </li>
-                <li>
-                    Cupcakes
-                </li>
-                <a href="./menu.html"> Complete menu</a>
-              </div>
-              
 
+            <div id="horizontalMenu">
+                <span class="button-like color-placeholder content-selector" data-type="menu-expand">Menu</span>
+                &emsp;
+                <span class="button-like color-placeholder content-selector">Order</span>
+                &emsp;
+                <span class="button-like color-placeholder content-selector"  data-type="pricing-expand">Pricing</span>
+                &emsp;
+                <span class="button-like color-placeholder content-selector">Contact</span>
+            </div>
+
+        </header>
+        <section>
+            <div class="click-expand visually-hidden" id="menu-items" data-type="menu-expand">
+            <h1>MENU</h1>
+            <div class="paragraph">
+                <ul>Cakes</ul>
+                <li>4" (serves 3-5) <span class="pricing visually-hidden">$25</span></li>
+                <li>6" (serves 6-8) <span class="pricing visually-hidden">$25</span></li>
+                <li>8" (serves 10-14) <span class="pricing visually-hidden">$25</span></li>
+                <li>10" (serves 20-25) <span class="pricing visually-hidden">$25</span></li>
+                <ul>Cupcakes</ul>
+                <li>Mini <span class="pricing visually-hidden">$20+/dozen</span></li>
+                <li>Standard <span class="pricing visually-hidden">$35+/dozen</span></li>
+                <ul>Other Desserts</ul>
+                <li>9" Pie <span class="pricing visually-hidden">$35+</span></li>
+                <li>9" Cheesecake <span class="pricing visually-hidden">$35+</span></li>
+            </div>
+                
+            </div>
+
+            <div class="click-expand visually-hidden" id="pricing-items" data-type="pricing-expand">
+                <h1>PRICING</h1>
+                <div class="paragraph">
+                    <ul>Cakes</ul>
+                    <li>4" (serves 3-5) <strong>$25</strong></li>
+                    <li>6" (serves 6-8) <strong>$45</strong></li>
+                    <li>8" (serves 10-14) <strong>$65</strong></li>
+                    <li>10" (serves 20-25) <strong>$95</strong></li>
+                    <ul>Cupcakes</ul>
+                    <li>Mini <strong>$20/dozen</strong></li>
+                    <li>Standard <strong>$35/dozen</strong></li>
+                    <ul>Other Desserts</ul>
+                    <li>9" Pie <strong>$35</strong></li>
+                    <li>9" Cheesecake <strong>$35</strong></li>
+                </div>
+                    
+            </div>
+            
         </section>
         <section class="color-placeholder">
-            x
+            <img src="assets/cakeimage.jpg" style="width:100%">
         </section>
-        <section class="color-placeholder">
+        <!-- <section class="color-placeholder">
             image/color placeholder
         </section>
         <section>
@@ -78,7 +116,7 @@
         </section>
         <section class="color-placeholder">image/color placeholder</section>
         <section class="color-placeholder">image/color placeholder</section>
-        <section>Follow us on socials - logos and a few sample pics</section>
+        <section>Follow us on socials - logos and a few sample pics</section> -->
     </main>
 
 
