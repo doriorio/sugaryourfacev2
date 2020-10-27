@@ -216,7 +216,7 @@ body {
     font-family: 'Kaushan Script', cursive;
   }
 
-  @media (max-width:961px)  {
+  @media (min-width:961px)  {
     .menu-expander, #sidebar1 {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
@@ -229,7 +229,7 @@ body {
 
   }
 
-  @media (min-width:961px)  {
+  @media (max-width:961px)  {
     #horizontalMenu {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
