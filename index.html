@@ -102,76 +102,81 @@
                     
             </summary>
             
-        </section>
+            
+            <summary class="click-expand visually-hidden" data-type="contact-expand" id="contact-items">
+                <h1>Contact/Order</h1>
+                <form name="submit-to-google-sheet">
+                    <label for="firstName">First Name</label>
+                    <input class="form-input" name="firstName" type="text" id="firstName" placeholder="First Name">
+                    <br>
+                    
+                    <label for="lastName">Last Name</label>
+                    <input class="form-input" name="lastName" type="text" id="lastName" placeholder="Last Name">
+                    <br>
+                    
+                    <label for="email">Email address</label>
+                    <input class="form-input" name="email" type="email" placeholder="Email" id="email" required>
+                    <br>
+                    
+                    <!-- Date picker -->
+                    <label for="dateOfEvent">Date of Event</label>
+                    <input class="form-input" name="dateOfEvent" type="date" placeholder="Date of Event" id="dateOfEvent" required>
+                    <br>
+                    
+                    <!-- Turn this into a drop down -->
+                    <label for="itemInterestedIn">Interested In</label>
+                    <select name="itemInterestedIn" class="form-control" id="itemInterestedIn" required>
+                        <option value="cakes">Cakes</option>
+                        <option value="cupcakes">Cupcakes</option>
+                        <option value="other">Other Desserts</option>
+                    </select>
+                    <br>
+                    
+                    <!-- Turn this into # that only goes up to x amount-->
+                    <label for="numPeople">Number of people</label>
+                    <input class="form-input" name="numPeople" type="number" placeholder="Number of people" id="numPeople" required>
+                    <br>
+                    
+                    <label for="phoneNum">Your phone number</label>
+                    <input class="form-input" name="phoneNum" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-####-##### format" id="phoneNum" required>
+                    <br>
+                    
+                    <label for="notes">Please give all additional details below</label>
+                    <textarea class="form-input" name="notes" id="notes"></textarea>
+                    <br>
+                    
+                    
+                    <button class="btn btn-info btn-small" type="submit" id="submitButton">Send</button>
+                    
+                    
+                    
+                </form>
+                <script>
+                    const scriptURL =
+                    'https://script.google.com/macros/s/AKfycbxb0S75A9RBGBR23ns40P4tdwTuYxlpyF6kZKl2GQzNlHphwqUz/exec'
+                    const form = document.forms['submit-to-google-sheet']
+                    const inputs = document.getElementsByClassName('form-input');
+                    const submit = document.getElementById('submitButton')
 
-        <summary class="click-expand visually-hidden" data-type="contact-expand" id="contact-items">
-            <form name="submit-to-google-sheet">
-                <label for="firstName">First Name</label>
-                <input name="firstName" type="text" id="firstName" placeholder="First Name">
-                <br>
-    
-                <label for="lastName">Last Name</label>
-                <input name="lastName" type="text" id="lastName" placeholder="Last Name">
-                <br>
-    
-                <label for="email">Email address</label>
-                <input name="email" type="email" placeholder="Email" id="email" required>
-                <br>
-    
-                <!-- Date picker -->
-                <label for="dateOfEvent">Date of Event</label>
-                <input name="dateOfEvent" type="date" placeholder="Date of Event" id="dateOfEvent" required>
-                <br>
-    
-                <!-- Turn this into a drop down -->
-                <label for="itemInterestedIn">Interested In</label>
-                <select name="itemInterestedIn" class="form-control" id="itemInterestedIn" required>
-                  <option value="cakes">Cakes</option>
-                  <option value="cupcakes">Cupcakes</option>
-                  <option value="other">Other Desserts</option>
-                </select>
-                <br>
-    
-                <!-- Turn this into # that only goes up to x amount-->
-                <label for="numPeople">Number of people</label>
-                <input name="numPeople" type="number" placeholder="Number of people" id="numPeople" required>
-                <br>
-    
-                <label for="phoneNum">Your phone number</label>
-                <input name="phoneNum" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-####-##### format" id="phoneNum" required>
-                <br>
-    
-                <label for="notes">Please give all additional details below</label>
-                <textarea name="notes" id="notes"></textarea>
-                <br>
-    
-    
-                <button class="btn btn-info btn-small" type="submit">Send</button>
-    
-    
-    
-              </form>
-              <script>
-                const scriptURL =
-                  'https://script.google.com/macros/s/AKfycbxb0S75A9RBGBR23ns40P4tdwTuYxlpyF6kZKl2GQzNlHphwqUz/exec'
-                const form = document.forms['submit-to-google-sheet']
-                const inputs = document.getElementsByTagName('input');
-    
-                form.addEventListener('submit', e => {
-                  e.preventDefault()
-                  fetch(scriptURL, {
-                      method: 'POST',
-                      mode: 'no-cors',
-                      body: new FormData(form)
+                    form.addEventListener('submit', e => {
+                        submit.disabled = true;
+                        e.preventDefault();
+                        fetch(scriptURL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            body: new FormData(form)
+                        })
+                        .then(response => alert(`We've received your request! Someone will be in contact shortly`))
+                        //.then(inputs.value = '')
+                        .then(Array.prototype.forEach.call(inputs, input => {input.value = ''}))
+                        .then(submit.disabled = false)
+                        .catch(error => alert(`There's been an issue, try again later`))
                     })
-                    .then(response => alert(`We've received your request! Someone will be in contact shortly`))
-                    .then(inputs.value = '')
-                    .catch(error => alert(`There's been an issue, try again later`))
-                })
-              </script>
+                    </script>
         </summary>
-
+        
         <summary class="click-expand visually-hidden" data-type="policies-expand" id="policies-items">
+            <h1>Policies</h1>
             <h5>ORDERS</h5>
             -All orders require at least 72 hours notice
             -Larger/custom item orders require a 2 week notice
@@ -190,9 +195,10 @@
             -Payments can be made via cash, Venmo, or credit card
             -For payments using a credit card, a 3.5% transaction fee will be added to your invoice
         </summary>
-
-
-
+    </section>
+        
+        
+        
         <section class="color-placeholder">
             <img src="assets/cakeimage.jpg" style="width:100%">
         </section>

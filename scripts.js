@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         var expanderType = '.visually-hidden[data-type="';
         if (menu.hasAttribute('data-type')) {
             expanderType+= menu.getAttribute('data-type') + '"]' ;
-            console.log(expanderType);
+
             var expander = document.querySelector([expanderType]);
-            console.log(expander);
             let otherExpanders = document.getElementsByClassName('click-expand');
             menu.addEventListener('click', function(){
                 expander.classList.toggle('visually-hidden');
