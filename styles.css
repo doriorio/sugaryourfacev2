@@ -93,7 +93,15 @@ header {
 
 }
 
+#socialButttons {
+  display: flex;
 
+}
+
+.social-button {
+  height: 10%;
+  width: 10%;
+}
 
 #logoImage {
     background-image: url('./assets/logo.png');
